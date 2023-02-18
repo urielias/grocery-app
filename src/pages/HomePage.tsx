@@ -14,7 +14,7 @@ const HomePage = () => {
                 <GroceryListCard title={grocery_list.title} items={grocery_list.items} />
             ))}
             {global.recipes.map((recipe) => (
-                <RecipeCard />
+                <RecipeCard props = {recipe} />
             ))}
         </div>
     );
