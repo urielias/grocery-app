@@ -1,70 +1,27 @@
 import React, { useState } from "react";
-import './RecipeCardContainer.css';
+import './RecipeCard.css';
+import './RecipeCardTabs';
+import RecipeCardTabs from "./RecipeCardTabs";
+import testImg from '../assets/pork_noodles.png'
 
-const RecipeCard = (props: any) => {
-
-    // Create Tabs with React
-    // https://www.youtube.com/watch?v=WkREeDy2WQ4
-
-    const [toggleState, setToggleState] = useState(1);
-
-    const toggleTab = (index: number) => {
-        setToggleState(index);
-    }
-
-    console.log(props.props.instructions);
-    
+const RecipeCard = (props: any) => { 
     return (
-    
-    <div className="RecipeCardContainer">
-        
-        <div className="TabContainer">
-            <div
-            className={toggleState === 1 ? "Tab Tab-Selected" : "Tab"}
-            onClick={() =>toggleTab(1)}
-            >Ingredients</div>
-
-            <div
-            className={toggleState === 2 ? "Tab Tab-Selected" : "Tab"}
-            onClick={() =>toggleTab(2)}
-            >Instructions</div>
-
-            <div 
-            className={toggleState === 3 ? "Tab Tab-Selected" : "Tab"}
-            onClick={() =>toggleTab(3)}
-            >Equipment</div>
+        <>
+        <div className = "RecipeCardTitle">
+            <h2>{props.props.name}</h2>
+            <p>Category: {props.props.category}, Difficulty: {props.props.difficulty}</p>
         </div>
 
-        <div className="TabContentContainer">
-            <div className={toggleState === 1 ? "TabContent TabContent-Selected" : "TabContent"}>
-                <h2>Ingredients</h2>
-                <hr/>
-                {props.props.ingredients.map((ingredients: string )=>
-                (
-                    <p>{ingredients}</p>
-                ))}
-               
+        <div className="ImageColumn">
+            <div className="ImageContainer">
+                    <img src={testImg} className="Image" />
             </div>
 
-            <div className={toggleState === 2 ? "TabContent TabContent-Selected" : "TabContent"}>
-            <h2>Instructions</h2>
-                <hr/>
-                {/* instructions  */}
-
-                <p>{props.props.instructions}</p>
-            </div>
-
-            <div className={toggleState === 3 ? "TabContent TabContent-Selected" : "TabContent"}>
-            <h2>Equipment</h2>
-                <hr/>
-                {/* map equipment  */}
-
-                <p> blender</p>
-                <p> stove</p>
-                <p> knife</p>
+            <div className="TabContainer">
+                <RecipeCardTabs props = {props.props} />
             </div>
         </div>
-    </div>
+        </>
     )
 }
 

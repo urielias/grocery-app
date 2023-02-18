@@ -8,11 +8,12 @@
     flex-direction: column;
     position: relative;
     width: 500px;
-    height: 300px;
+    /* height: 300px; */
     background: #f1f1f1;
-    margin: 100px auto 0;
+    /* margin: 100px auto 0; */
     word-break: wrap;
     border: 1px solid rgba(0, 0, 0, 0.274);
+    
 }
 .TabContainer{
     display: flex;
