@@ -3,7 +3,7 @@
 }
 
 .TabContainer{
-    flex: 1;
+    /* flex: 1; */
     display: flex ;
     /* background-color:'yellow'; 
     border: '3px solid black' */
