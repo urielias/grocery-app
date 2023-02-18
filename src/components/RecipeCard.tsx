@@ -12,7 +12,7 @@ const RecipeCard = (props: any) => {
             <p>Category: {props.props.category}, Difficulty: {props.props.difficulty}</p>
         </div>
 
-        <div className="ImageColumn">
+        <div className="Container">
             <div className="ImageContainer">
                     <img src={testImg} className="Image" />
             </div>

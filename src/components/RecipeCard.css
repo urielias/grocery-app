@@ -9,7 +9,7 @@
     border: '3px solid black' */
 }
 
-.ImageColumn{
+.Container{
     display: flex;
     gap: 1rem;
     /* background-color:'purple' */
