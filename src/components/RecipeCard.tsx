@@ -14,7 +14,7 @@ const RecipeCard = (props: any) => {
 
         <div className="Container">
             <div className="ImageContainer">
-                    <img src={testImg} className="Image" />
+                    <img src={testImg} alt={props.props.name} className="Image" />
             </div>
 
             <div className="TabContainer">

@@ -11,7 +11,7 @@
 
 .Container{
     display: flex;
-    gap: 1rem;
+    gap: 1em;
     /* background-color:'purple' */
 }
 
@@ -25,5 +25,6 @@
 
 .Image{
     width: 100%;
+    max-width: 500px;
     border-radius: 20px
 }
