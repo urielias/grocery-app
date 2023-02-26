@@ -1,0 +1,10 @@
+.ContentContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.RecipeCategoryTitle {
+    padding-top: 1em;
+    /* line-height: .25em; */
+}

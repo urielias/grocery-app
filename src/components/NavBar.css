@@ -1,0 +1,30 @@
+.NavBar {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app_name {
+    font-weight: 700;
+    font-size: ;
+    color: #044123;
+    line-height: 16px;
+
+}
+
+.LeftNav {
+
+}
+
+.RightNav {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.NavLink {
+    color: black;
+}
