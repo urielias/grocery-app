@@ -1,13 +1,24 @@
+/* import custom fonts from Googlefonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-family: 'Inter', sans-serif;
+    max-width: 900;
+    position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+    font-size: 3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+>*> {
+    box-sizing: border-box;
 }
