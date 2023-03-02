@@ -1,5 +1,5 @@
 import React from "react";
-import src/components/RecipeCategory.css;
+import "./RecipeCategory.css";
 
 const RecipeCategory = (props: any) => {
     return <div className="RecipeCategory">

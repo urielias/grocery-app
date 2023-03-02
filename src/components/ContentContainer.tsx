@@ -1,5 +1,5 @@
 import React from "react";
-import src/components/ContentContainer.css;
+import "./ContentContainer.css";
 
 const ContentContainer = (props: any) => {
     return <div className="ContentContainer">

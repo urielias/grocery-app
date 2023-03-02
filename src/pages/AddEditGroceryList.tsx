@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { GlobalContext } from "../App";
 import { useForm } from "react-hook-form";
+import "./GlobalStyling.css";
 
 type AddEditGroceryListProps = {
     adding: boolean;
