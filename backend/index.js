@@ -1,0 +1,23 @@
+// Initial express server configuration
+const express = require("express");
+const app = express();
+const sqlite3 = require("sqlite3").verbose();
+const port = 3000;
+
+// Configuring db connection
+global.db = new sqlite3.Database("./database.db", function (err) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    } else {
+        console.log("DB connected!");
+        global.db.run("PRAGMA foreign_keys=ON"); 
+    }
+});
+
+app.use(express.urlencoded());
+
+// Initialize express server
+app.listen(port, () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    console.log(`App listening on port ${port}`);
+});
