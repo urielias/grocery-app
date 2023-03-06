@@ -40,7 +40,24 @@ const sqliteToJsArray = (sqlArray) => {
     return sqlArray.split(",");
 };
 
+const cypher = (password) => {
+    const key = Math.floor(Math.random() * 10);
+    let chars = password.split("");
+    console.log(chars);
+    chars = chars.map((char) => String.fromCharCode(char.charCodeAt(0) + key));
+    return [key, chars.join("")];
+}
+
+const decypher = (cyphered, key) => {
+    let chars = cyphered.split("");
+    chars = chars.map((char) => String.fromCharCode(char.charCodeAt(0) - key));
+    return chars.join("");
+}
+
+
 module.exports = {
     queryPromise,
     sqliteToJsArray,
+    cypher,
+    decypher
 };

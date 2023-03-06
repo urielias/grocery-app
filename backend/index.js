@@ -20,7 +20,9 @@ app.use(bodyParser.json());
 
 // Set Routes
 const groceryListsRoutes = require("./routes/grocery_lists");
+const userRoutes = require("./routes/users");
 app.use("/grocerylists", groceryListsRoutes);
+app.use("/users", userRoutes);
 
 // Initialize express server
 app.listen(port, () => {
