@@ -11,4 +11,4 @@ const SelectedRecipesContentContainer = (props: any) => {
             </div>
 }
 
-export default ContentContainer;
+export default SelectedRecipesContentContainer;
