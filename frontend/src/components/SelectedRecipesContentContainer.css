@@ -1,0 +1,10 @@
+.SelectedRecipeContentContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.SelectedRecipeCategoryTitle {
+    padding-top: 1em;
+    /* line-height: .25em; */
+}
