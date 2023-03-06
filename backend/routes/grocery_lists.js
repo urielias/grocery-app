@@ -50,11 +50,24 @@ router.post("/edit", async (req, res) => {
     const query = `UPDATE GroceryLists SET name = "${name}", items = "${items}" WHERE id='${id}'`;
 
     try {
-        let listID = await queryPromise(query, "run");
+        const listID = await queryPromise(query, "run");
         res.status(200).json({ grocery_list_id: listID });
     } catch (err) {
         console.error("Unable to edit list", err);
         res.status(500).send("Error editing grocery list");
+    }
+});
+
+router.post("/delete", async (req, res) => {
+    const { id } = req.body;
+    const query = `DELETE FROM GroceryLists WHERE id='${id}'`;
+
+    try {
+        await queryPromise(query, "run");
+        res.status(200).send("ok");
+    } catch (err) {
+        console.error("Unable to delete list", err);
+        res.status(500).send("Error deleting list");
     }
 });
 
