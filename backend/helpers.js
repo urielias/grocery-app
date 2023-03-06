@@ -1,4 +1,4 @@
-const queryPromise = (query, type="all") => {
+const queryPromise = (query, type = "all") => {
     return new Promise((resolve, reject) => {
         switch (type) {
             case "get":
@@ -7,7 +7,7 @@ const queryPromise = (query, type="all") => {
                         console.error("[ERROR]", err);
                         return reject(err);
                     }
-                            
+
                     return resolve(data);
                 });
                 break;
@@ -20,30 +20,27 @@ const queryPromise = (query, type="all") => {
 
                     return resolve(this.lastID);
                 });
-                break
+                break;
             default:
                 global.db.all(query, function (err, data) {
                     if (err) {
                         console.error("[ERROR]", err);
                         return reject(err);
                     }
-                            
+
                     return resolve(data);
                 });
                 break;
         }
-        
     });
-}
-
+};
 
 const sqliteToJsArray = (sqlArray) => {
     if (sqlArray == "") return [];
     return sqlArray.split(",");
-}
-
+};
 
 module.exports = {
     queryPromise,
-    sqliteToJsArray
-}
+    sqliteToJsArray,
+};

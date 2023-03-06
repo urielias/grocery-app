@@ -9,14 +9,13 @@ router.get("/", async (req, res) => {
     try {
         let grocery_lists = await queryPromise(query, "all");
         grocery_lists = grocery_lists.map((list) => {
-            return {...list, items: sqliteToJsArray(list.items)}
-        })
+            return { ...list, items: sqliteToJsArray(list.items) };
+        });
         res.status(200).json({ grocery_lists });
     } catch {
         res.status(500).send("Error fetching grocery lists");
     }
 });
-
 
 router.get("/get", async (req, res) => {
     const list_id = req.query.list;
@@ -24,13 +23,12 @@ router.get("/get", async (req, res) => {
 
     try {
         let grocery_list = await queryPromise(query, "get");
-        grocery_list.items = sqliteToJsArray(grocery_list.items)
+        grocery_list.items = sqliteToJsArray(grocery_list.items);
         res.status(200).json(grocery_list);
     } catch {
         res.status(500).send("Error fetching grocery lists");
     }
 });
-
 
 router.post("/new", async (req, res) => {
     const { name, items, user_id } = req.body;
@@ -38,12 +36,11 @@ router.post("/new", async (req, res) => {
 
     try {
         let newListID = await queryPromise(query, "run");
-        res.status(200).json({ grocery_list_id: newListID })
+        res.status(200).json({ grocery_list_id: newListID });
     } catch {
         res.status(500).send("Error creating grocery list");
     }
 });
-
 
 router.post("/edit", async (req, res) => {
     const { id, name, items } = req.body;
@@ -51,10 +48,10 @@ router.post("/edit", async (req, res) => {
 
     try {
         let listID = await queryPromise(query, "run");
-        res.status(200).json({ grocery_list_id: listID })
+        res.status(200).json({ grocery_list_id: listID });
     } catch {
         res.status(500).send("Error editing grocery list");
     }
-})
+});
 
 module.exports = router;
