@@ -4,7 +4,7 @@ import "./SelectedRecipesCreateListBtn.css";
 
 const SelectedRecipesCreateListBtn = (props: any) => {
     return (
-        <button class="SelectedRecipesCreateListBtn">Create Shopping list</button>
+        <button className="SelectedRecipesCreateListBtn">Create Shopping list</button>
     )
 }
 
