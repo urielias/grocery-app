@@ -1,6 +1,7 @@
 // Initial express server configuration
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser')
 const sqlite3 = require("sqlite3").verbose();
 const port = 3000;
 
@@ -15,7 +16,11 @@ global.db = new sqlite3.Database("./database.db", function (err) {
     }
 });
 
-app.use(express.urlencoded());
+app.use(bodyParser.json());
+
+// Set Routes
+const groceryListsRoutes = require("./routes/grocery_lists");
+app.use("/grocerylists", groceryListsRoutes);
 
 // Initialize express server
 app.listen(port, () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
