@@ -1,0 +1,10 @@
+.RecipeDetailImgContainer {
+    position: relative;
+    width: 35%;
+}
+
+.RecipeDetailImg {
+
+    border-radius: 4px;
+    max-width: 100%;
+}
