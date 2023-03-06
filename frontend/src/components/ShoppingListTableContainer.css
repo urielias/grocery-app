@@ -1,0 +1,37 @@
+.ShoppingListTableContainer {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 60%;
+    flex-wrap: wrap;
+}
+
+.ShoppingListIngredients {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 45%;
+
+}
+
+table {
+    margin-bottom: 3em;
+}
+table, tr, td {
+    font-weight: 200;
+    color: #576B75;
+    border: 1px solid #C4CFD4;
+    border-collapse: collapse;
+}
+td {
+    padding-left: .5em;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.TableTitle {
+    padding-top: 0px;
+    margin-top: 0px;
+    color: black;
+}
