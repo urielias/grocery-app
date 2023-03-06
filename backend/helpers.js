@@ -46,18 +46,17 @@ const cypher = (password) => {
     console.log(chars);
     chars = chars.map((char) => String.fromCharCode(char.charCodeAt(0) + key));
     return [key, chars.join("")];
-}
+};
 
 const decypher = (cyphered, key) => {
     let chars = cyphered.split("");
     chars = chars.map((char) => String.fromCharCode(char.charCodeAt(0) - key));
     return chars.join("");
-}
-
+};
 
 module.exports = {
     queryPromise,
     sqliteToJsArray,
     cypher,
-    decypher
+    decypher,
 };
