@@ -1,0 +1,11 @@
+.RecipeDetailTitle {
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+    line-height: 10%;
+}
+
+.DetailAdd {
+    padding-left: .5em;
+}
