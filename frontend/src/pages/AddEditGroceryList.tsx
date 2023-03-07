@@ -2,14 +2,10 @@ import React, { useContext, useState } from "react"
 import { GlobalContext } from "../App";
 import { useForm } from "react-hook-form";
 import "./GlobalStyling.css";
-
-type AddEditGroceryListProps = {
-    adding: boolean;
-    id?: number;
-}
+import axios from "axios";
 
 
-const AddEditGroceryList = (props: AddEditGroceryListProps) => {
+const AddEditGroceryList = () => {
     const { global, setGlobal } = useContext(GlobalContext);
     const [ items, setItems ] = useState(["item1"]);
     const adding = global.adding;
@@ -24,24 +20,26 @@ const AddEditGroceryList = (props: AddEditGroceryListProps) => {
     }
 
     const saveGroceryList = (data: any) => {
-        let grocery_lists = global.grocery_lists;
+        let groceryList = {
+            name: data.name,
+            items: items.map((item) => data[item])
+        }
 
-        if (adding || (global.list_id !== undefined && grocery_lists.length <= global.list_id)) {
-            grocery_lists.push({
-                name: data.name,
-                items: items.map((item) => data[item])
+        if (adding) {
+            axios.post(`${global.server}/grocerylists/new`, { ...groceryList, user_id: global.userID }).then((res) => {
+                console.log(res.data);
+                setGlobal({ ...global, currentPage: "home", id: undefined, adding: undefined });
+            }).catch((err) => {
+                console.error(err);
             });
         } else {
-            grocery_lists[data.id] = {
-                name: data.name,
-                items: items.map((item) => data[item])
-            };
+            axios.post(`${global.server}/grocerylists/edit`, { ...groceryList, id: global.id }).then((res) => {
+                console.log(res.data);
+                setGlobal({ ...global, currentPage: "home", id: undefined, adding: undefined });
+            }).catch((err) => {
+                console.error(err);
+            });
         }
-        
-        setGlobal({
-            ...global,
-            grocery_lists: grocery_lists
-        });
     }
 
     return (

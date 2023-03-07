@@ -15,10 +15,10 @@ router.post("/login", async (req, res) => {
         return;
     }
 
-    const { id, email, username, cypher_key, cyphered_pass } = user_data;
+    const { id, cypher_key, cyphered_pass } = user_data;
 
     if (password === decypher(cyphered_pass, cypher_key)) {
-        res.status(200).json({ id, email, username });
+        res.status(200).json({ user_id: id });
     } else {
         res.status(401).send("Incorrect username/email/password");
     }
@@ -38,7 +38,7 @@ router.post("/signup", async (req, res) => {
         return;
     }
 
-    res.status(200).send({ user_id });
+    res.status(200).json({ user_id });
 });
 
 module.exports = router;

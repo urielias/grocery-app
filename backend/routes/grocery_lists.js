@@ -42,9 +42,10 @@ router.get("/get", async (req, res) => {
 router.post("/new", async (req, res) => {
     const { name, items, user_id } = req.body;
     const query = `INSERT INTO GroceryLists (name, items, user_id) VALUES ("${name}", "${items}", "${user_id}")`;
+    let newListID;
 
     try {
-        const newListID = await queryPromise(query, "run");
+        newListID = await queryPromise(query, "run");
     } catch (err) {
         console.error("Unable to create list", err);
         res.status(500).send("Error creating grocery list");
@@ -57,9 +58,10 @@ router.post("/new", async (req, res) => {
 router.post("/edit", async (req, res) => {
     const { id, name, items } = req.body;
     const query = `UPDATE GroceryLists SET name = "${name}", items = "${items}" WHERE id='${id}'`;
+    let listID;
 
     try {
-        const listID = await queryPromise(query, "run");
+        listID = await queryPromise(query, "run");
     } catch (err) {
         console.error("Unable to edit list", err);
         res.status(500).send("Error editing grocery list");

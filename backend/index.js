@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
+const cors = require('cors');
 const port = 3000;
 
 // Configuring db connection
@@ -17,6 +18,7 @@ global.db = new sqlite3.Database("./database.db", function (err) {
 });
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // Set Routes
 const groceryListsRoutes = require("./routes/grocery_lists");

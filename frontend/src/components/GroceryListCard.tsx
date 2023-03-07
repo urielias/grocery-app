@@ -1,23 +1,22 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../App";
+import { GroceryList } from "../appTypes";
 
 type GroceryListProps = {
-    title: string;
-    items: string[];
-    id: number;
+    groceryList: GroceryList
 };
 
 const GroceryListCard = (props: GroceryListProps) => {
     const { global, setGlobal } = useContext(GlobalContext);
-    const { title, items, id } = props;
+    const { id, name, items } = props.groceryList;
 
     const editList = () => {
-        setGlobal({ ...global, list_id: id, adding: false, currentPage: "list_editor" });
+        setGlobal({ ...global, id: id, adding: false, currentPage: "list_editor" });
     }
 
     return (
         <div>
-            <h2>{title}</h2>
+            <h2>{name}</h2>
             <ul>
                 {
                     items.slice(0, 5).map((item) => (

@@ -43,7 +43,6 @@ const sqliteToJsArray = (sqlArray) => {
 const cypher = (password) => {
     const key = Math.floor(Math.random() * 10);
     let chars = password.split("");
-    console.log(chars);
     chars = chars.map((char) => String.fromCharCode(char.charCodeAt(0) + key));
     return [key, chars.join("")];
 };

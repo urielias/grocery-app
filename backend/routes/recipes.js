@@ -3,7 +3,7 @@ const router = express.Router();
 const { queryPromise, sqliteToJsArray } = require("../helpers");
 
 router.get("/", async (req, res) => {
-    const { name, item, difficulty, category } = req.query;
+    const { name, difficulty, category, item } = req.query;
     const query = `SELECT * FROM Recipes`;
     let recipes;
 

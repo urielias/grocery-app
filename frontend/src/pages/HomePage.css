@@ -1,5 +1,9 @@
 .RowContainer {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.ButtonContainer {
+    padding: 1.5rem 0;
 }
