@@ -50,7 +50,7 @@ router.get("/get", async (req, res) => {
 router.post("/new", async (req, res) => {
     const { name, description, instructions, ingredients } = req.body;
     const query = `INSERT INTO Recipes (name, description, instructions, ingredients) VALUES ("${name}", "${description}", "${instructions}", "${ingredients}")`;
-    let recipe_id
+    let recipe_id;
 
     try {
         recipe_id = await queryPromise(query, "run");
