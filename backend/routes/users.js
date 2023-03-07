@@ -28,14 +28,17 @@ router.post("/signup", async (req, res) => {
     const { email, username, password } = req.body;
     const [cypher_key, cyphered_pass] = cypher(password);
     const query = `INSERT INTO Users (email, username, cypher_key, cyphered_pass) VALUES ("${email}", "${username}", "${cypher_key}", "${cyphered_pass}")`;
+    let user_id;
 
     try {
-        const newUserID = await queryPromise(query, "run");
-        res.status(200).send({ user_id: newUserID });
+        user_id = await queryPromise(query, "run");
     } catch (err) {
         console.error("Unable to create user", err);
         res.status(500).send("Unable to create user");
+        return;
     }
+
+    res.status(200).send({ user_id });
 });
 
 module.exports = router;
