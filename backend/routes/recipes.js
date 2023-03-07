@@ -3,7 +3,7 @@ const router = express.Router();
 const { queryPromise, sqliteToJsArray } = require("../helpers");
 
 router.get("/", async (req, res) => {
-    const { name, item } = req.query;
+    const { name, item, difficulty, category } = req.query;
     const query = `SELECT * FROM Recipes`;
     let recipes;
 
@@ -17,6 +17,14 @@ router.get("/", async (req, res) => {
 
     if (name) {
         recipes = recipes.filter((recipe) => recipe.name.includes(name));
+    }
+
+    if (difficulty) {
+        recipes = recipes.filter((recipe) => parseInt(recipe.difficulty) === parseInt(difficulty));
+    }
+
+    if (category) {
+        recipes = recipes.filter((recipe) => recipe.category.includes(category));
     }
 
     if (item) {
@@ -48,8 +56,8 @@ router.get("/get", async (req, res) => {
 });
 
 router.post("/new", async (req, res) => {
-    const { name, description, instructions, ingredients } = req.body;
-    const query = `INSERT INTO Recipes (name, description, instructions, ingredients) VALUES ("${name}", "${description}", "${instructions}", "${ingredients}")`;
+    const { name, difficulty, category, description, ingredients, instructions } = req.body;
+    const query = `INSERT INTO Recipes (name, difficulty, category, description, ingredients, instructions) VALUES ("${name}", "${difficulty}", "${category}", "${description}", "${ingredients}", "${instructions}")`;
     let recipe_id;
 
     try {

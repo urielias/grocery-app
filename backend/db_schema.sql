@@ -21,9 +21,11 @@ CREATE TABLE IF NOT EXISTS GroceryLists (
 CREATE TABLE IF NOT EXISTS Recipes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
+    difficulty INTEGER NOT NULL,
+    category TEXT NOT NULL,
     description TEXT,
-    instructions TEXT,
-    ingredients TEXT ARRAY NOT NULL
+    ingredients TEXT ARRAY NOT NULL,
+    instructions TEXT
 );
 
 COMMIT;

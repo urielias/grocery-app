@@ -20,8 +20,10 @@ app.use(bodyParser.json());
 
 // Set Routes
 const groceryListsRoutes = require("./routes/grocery_lists");
+const recipeRoutes = require("./routes/recipes");
 const userRoutes = require("./routes/users");
 app.use("/grocerylists", groceryListsRoutes);
+app.use("/recipes", recipeRoutes);
 app.use("/users", userRoutes);
 
 // Initialize express server
