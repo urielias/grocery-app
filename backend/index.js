@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require('cors');
-const port = 3000;
+const port = 5500;
 
 // Configuring db connection
 global.db = new sqlite3.Database("./database.db", function (err) {

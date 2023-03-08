@@ -1,18 +1,47 @@
-import React from "react";
-import logo from "src/assets/logo.svg";
+import React, { useContext } from "react";
+import logo from "../assets/logo.svg";
+import { GlobalContext } from "../App";
 import "./NavBar.css";
+import { Page } from "../appTypes";
 
-const NavBar = (props: any) => {
-    return   <div className= "NavBar"> 
-                <span className="LeftNav">
-                    <img src={logo} alt="Freshly grocery app logo"/> 
+const NavBar = (props: { rightNav: boolean }) => {
+    const { rightNav } = props;
+    const { global, setGlobal } = useContext(GlobalContext);
+
+    const changePage = (page: Page) => {
+        setGlobal({ ...global, currentPage: page });
+    };
+
+    return (
+        <div className="NavBar">
+            <span className="LeftNav">
+                <button onClick={() => changePage("home")}>
+                    <img className="AppLogo" src={logo} alt="Freshly grocery app logo" />
+                </button>
+            </span>
+            {rightNav ? (
+                <span className="RightNav">
+                    <button onClick={() => changePage("home")}>
+                        <a href="" className="NavLink">
+                            My Grocery Lists
+                        </a>
+                    </button>
+                    <button onClick={() => changePage("home")}>
+                        <a href="" className="NavLink">
+                            Browse Recipes
+                        </a>
+                    </button>
+                    <button>
+                        <a href="" className="NavLink">
+                            Logout
+                        </a>
+                    </button>
                 </span>
-                <span className="RightNav"> 
-                    <a href="" className="NavLink">Browse</a>
-                    <a href="" className="NavLink">Selected Recipes</a>
-                    <a href="" className="NavLink">Shopping List</a>
-                </span>
-            </div>
-}
+            ) : (
+                <></>
+            )}
+        </div>
+    );
+};
 
 export default NavBar;

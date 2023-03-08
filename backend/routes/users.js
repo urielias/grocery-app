@@ -17,6 +17,8 @@ router.post("/login", async (req, res) => {
 
     const { id, cypher_key, cyphered_pass } = user_data;
 
+    console.log(20, decypher(cyphered_pass, cypher_key));
+
     if (password === decypher(cyphered_pass, cypher_key)) {
         res.status(200).json({ user_id: id });
     } else {

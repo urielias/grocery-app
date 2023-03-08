@@ -29,7 +29,6 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>Welcome to the grocery list app!!</h1>
             {
                 groceryLists.length > 0 ? <>
                     <h2>This are you current Grocery Lists:</h2>

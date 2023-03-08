@@ -1,8 +1,19 @@
-button {
+/* button {
     background-color: navy;
     color: white;
     padding: 0.8rem;
     font-size: large;
     font-weight: bold;
     border-radius: 1rem;
+} */
+
+.AppLogo {
+    width: 10rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
 }

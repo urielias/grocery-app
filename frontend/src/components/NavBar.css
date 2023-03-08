@@ -7,7 +7,6 @@
 
 .app_name {
     font-weight: 700;
-    font-size: ;
     color: #044123;
     line-height: 16px;
 
@@ -27,4 +26,5 @@
 
 .NavLink {
     color: black;
+    font-weight: bold;
 }
