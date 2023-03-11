@@ -55,9 +55,9 @@ const LogInPage = () => {
     };
 
     return (
-        <div>
+<div>
             <h1>{existingUser ? "Log In" : "Sign Up"}</h1>
-            <form onSubmit={handleSubmit(formHandler)}>
+            <form className="LogInForm" onSubmit={handleSubmit(formHandler)}>
                 <li>
                     {existingUser ? (
                         <ul>
@@ -103,7 +103,7 @@ const LogInPage = () => {
                         <></>
                     )}
                 </li>
-                <button
+                <button className="SubmitButton"
                     type="button"
                     onClick={() => {
                         setExistingUser(!existingUser);
@@ -111,7 +111,7 @@ const LogInPage = () => {
                 >
                     {existingUser ? "Sign Up instead" : "Log In instead"}
                 </button>
-                <button type="submit">{existingUser ? "Log In" : "Sign Up"}</button>
+                <button className="SubmitButton" type="submit">{existingUser ? "Log In" : "Sign Up"}</button>
             </form>
         </div>
     );
