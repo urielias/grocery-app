@@ -22,19 +22,19 @@ const NavBar = (props: { rightNav: boolean }) => {
             {rightNav ? (
                 <span className="RightNav">
                     <button onClick={() => changePage("home")}>
-                        <a href="" className="NavLink">
+                        <p className="NavLink">
                             My Grocery Lists
-                        </a>
+                        </p>
                     </button>
-                    <button onClick={() => changePage("home")}>
-                        <a href="" className="NavLink">
+                    <button onClick={() => changePage("recipes")}>
+                        <p  className="NavLink">
                             Browse Recipes
-                        </a>
+                        </p>
                     </button>
-                    <button>
-                        <a href="" className="NavLink">
+                    <button onClick={() => changePage("login")}>
+                        <p className="NavLink">
                             Logout
-                        </a>
+                        </p>
                     </button>
                 </span>
             ) : (

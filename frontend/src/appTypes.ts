@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type Page = "login" | "home" | "list_editor" | "recipe_detail";
+export type Page = "login" | "home" | "list_editor" | "recipe_detail" | "recipes";
 
 export type AppData = {
     currentPage: Page,

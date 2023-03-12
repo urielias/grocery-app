@@ -21,9 +21,8 @@ const GroceryListCard = (props: GroceryListProps) => {
     return (
         <div className="GroceryListCardMain" style={{ backgroundColor: bgColor }}>
             <h2>{name}</h2>
-            
             <ul>
-                {items.slice(0, 5).map((item) => (
+                {items.slice(0, 4).map((item) => (
                     <li>{item}</li>
                 ))}
             </ul>
