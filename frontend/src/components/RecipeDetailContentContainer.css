@@ -5,3 +5,64 @@
     flex-direction: column;
 
 }
+
+.RecipeDetailMain {
+    display: flex;
+    padding-top: 4em;
+    justify-content: space-between;
+}
+
+.RecipeDetailImgContainer {
+    position: relative;
+    width: 35%;
+}
+
+.RecipeDetailImg {
+
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+.RecipeDetailTableContainer {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 60%;
+}
+
+table, tr, td {
+    font-weight: 200;
+    color: #576B75;
+    border: 1px solid #C4CFD4;
+    border-collapse: collapse;
+}
+
+td {
+    padding-left: .5em;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.TableTitle {
+    padding-top: 0px;
+    margin-top: 0px;
+    color: black;
+}
+
+.RecipeDetailTitle {
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+    line-height: 10%;
+}
+
+.DetailAdd {
+    padding-left: .5em;
+}
+
+.DetailTags {
+    font-weight: 200;
+    color: #576B75;
+}
