@@ -41,7 +41,6 @@ const LogInPage = () => {
             .post(`${global.server}/users/login`, data)
             .then((res) => {
                 console.log("Log In successful!");
-                console.log(res.data);
                 setGlobal({ ...global, userID: res.data.user_id, currentPage: "home" });
             })
             .catch((err) => {

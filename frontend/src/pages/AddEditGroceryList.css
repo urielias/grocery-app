@@ -1,3 +1,9 @@
 .AddEditGroceryForm {
     max-width: 20rem;
 }
+
+.AddEditListTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
