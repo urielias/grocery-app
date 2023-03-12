@@ -1,38 +1,6 @@
 .LogInForm {
-    max-width: 800px;
+    max-width: 15rem;
     padding: 0;
     margin: 0;
 }
 
-label {
-    display: block;
-    padding-bottom: .25rem;
-}
-
-li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    margin: 0;
-    padding-left: 0;
-    padding-bottom: 1rem;
-}
-
-button {
-    display: block;
-    /* background-color: blue; */
-}
-
-.SubmitButton {
-    display: inline;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    padding: .5rem;
-    background-color: #044123;
-    color: white;
-    border-radius: 4px;
-
-}

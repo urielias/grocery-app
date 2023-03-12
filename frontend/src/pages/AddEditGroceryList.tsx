@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react"
 import { GlobalContext } from "../App";
 import { useForm } from "react-hook-form";
-import "./GlobalStyling.css";
 import axios from "axios";
+import "./AddEditGroceryList.css";
 
 
 const AddEditGroceryList = () => {
@@ -45,7 +45,7 @@ const AddEditGroceryList = () => {
     return (
         <div>
             <h1>{ adding ? "Add" : "Edit" } a Grocery List</h1>
-            <form onSubmit={handleSubmit(saveGroceryList)}>
+            <form className="AddEditGroceryForm" onSubmit={handleSubmit(saveGroceryList)}>
                 <li>
                     <ul>
                         <label htmlFor="name">List name</label>
@@ -60,15 +60,22 @@ const AddEditGroceryList = () => {
                         ))
                     }
                 </li>
-                <button type="button" onClick={addItem}>Add Item</button>
-                {
-                    items.length > 1 ? <button type="button" onClick={removeItem}>Remove Item</button> : <></>
-                }
-                <button type="submit">Save list</button>
+                <div className="FlexRowContainer">
+                    {
+                        items.length > 1 ? <button className="SecondaryButton" type="button" onClick={removeItem}>Remove Item</button> : <></>
+                    }
+                    <button className="SubmitButton" type="button" onClick={addItem}>Add Item</button>
+                </div>
+                
+                <div className="FlexColumnContainer">
+                    <button className="SubmitButton" type="submit">Save list</button>
+                    <button className="SecondaryButton" type="button" onClick={() => {
+                        setGlobal({...global, currentPage: "home"})
+                    }}>Back</button>
+                </div>
+                
             </form>
-            <button onClick={() => {
-                setGlobal({...global, currentPage: "home"})
-            }}>Back</button>
+            
         </div>
     )
 }

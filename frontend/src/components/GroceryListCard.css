@@ -1,0 +1,17 @@
+.GroceryListCardMain {
+    position: relative;
+    width: 8rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+.EditListButton {
+    background-color: transparent;
+    border: solid white 1px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 7%;
+    right: 7%;
+    cursor: pointer;
+}

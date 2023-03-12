@@ -8,6 +8,7 @@ export type AppData = {
     userID?: number,
     adding?: boolean,
     id?: number
+    images?: string[]
 };
 
 export type AppContext = {

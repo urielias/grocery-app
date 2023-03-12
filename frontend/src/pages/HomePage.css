@@ -1,3 +1,9 @@
+.HomePageMain {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 .RowContainer {
     display: flex;
     flex-direction: row;

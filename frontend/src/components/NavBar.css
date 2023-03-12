@@ -1,5 +1,5 @@
 .NavBar {
-    padding-top: 30px;
+    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,19 +12,16 @@
 
 }
 
-.LeftNav {
-
-}
-
 .RightNav {
-    width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
+    gap: 2rem;
 }
 
 .NavLink {
     color: black;
     font-weight: bold;
+    font-size: 1.2rem;
 }

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../App";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import "./LogInPage.css";
 
 const LogInPage = () => {
     const { global, setGlobal } = useContext(GlobalContext);
@@ -55,7 +56,7 @@ const LogInPage = () => {
     };
 
     return (
-<div>
+        <div>
             <h1>{existingUser ? "Log In" : "Sign Up"}</h1>
             <form className="LogInForm" onSubmit={handleSubmit(formHandler)}>
                 <li>
@@ -103,15 +104,20 @@ const LogInPage = () => {
                         <></>
                     )}
                 </li>
-                <button className="SubmitButton"
-                    type="button"
-                    onClick={() => {
-                        setExistingUser(!existingUser);
-                    }}
-                >
-                    {existingUser ? "Sign Up instead" : "Log In instead"}
-                </button>
-                <button className="SubmitButton" type="submit">{existingUser ? "Log In" : "Sign Up"}</button>
+                <div className="FlexRowContainer">
+                    <button
+                        className="SecondaryButton"
+                        type="button"
+                        onClick={() => {
+                            setExistingUser(!existingUser);
+                        }}
+                    >
+                        {existingUser ? "Sign Up instead" : "Log In instead"}
+                    </button>
+                    <button className="SubmitButton" type="submit">
+                        {existingUser ? "Log In" : "Sign Up"}
+                    </button>
+                </div>
             </form>
         </div>
     );
