@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { GlobalContext } from "../App";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -9,7 +9,26 @@ const AddEditGroceryList = () => {
     const { global, setGlobal } = useContext(GlobalContext);
     const [ items, setItems ] = useState(["item1"]);
     const adding = global.adding;
-    const { register, handleSubmit } = useForm({ shouldUseNativeValidation: true });
+    const { register, handleSubmit, setValue } = useForm({ shouldUseNativeValidation: true });
+
+    useEffect(() => {
+        if (adding) {
+            return;
+        }
+
+        axios.get(`${global.server}/grocerylists/get?list=${global.id}`).then((res) => {
+            let listItems = res.data.items.map((item: any, index: number) => `item${index + 1}`);
+            setItems(listItems);
+            setValue("name", res.data.name);
+            
+            for (let i = 0; i < listItems.length; i++) {
+                setValue(listItems[i], res.data.items[i]);
+            }
+            
+        }).catch((err) => {
+            console.error(err);
+        });
+    }, [adding]);
 
     const addItem = () => {
         setItems([...items, "item" + (items.length + 1).toString()]);
