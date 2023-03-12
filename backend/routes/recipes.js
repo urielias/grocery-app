@@ -52,7 +52,9 @@ router.get("/get", async (req, res) => {
         return;
     }
 
-    res.status(200).json({ recipe });
+    recipe.ingredients = sqliteToJsArray(recipe.ingredients);
+
+    res.status(200).json(recipe);
 });
 
 router.post("/new", async (req, res) => {

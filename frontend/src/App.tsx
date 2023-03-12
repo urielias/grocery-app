@@ -36,6 +36,7 @@ import food_28 from "./assets/food photos/food_28.jpg";
 import food_29 from "./assets/food photos/food_29.jpg";
 import food_30 from "./assets/food photos/food_30.jpg";
 import RecipesPage from "./pages/RecipesPage";
+import RecipeDetail from "./pages/RecipeDetail";
 
 const images = [
     food_1, food_2, food_3, food_4, food_5,
@@ -60,6 +61,8 @@ const PageSwitcher = (props: { page: Page }) => {
             return <AddEditGroceryList/>
         case "recipes":
             return <RecipesPage />
+        case "recipe_detail":
+            return <RecipeDetail />
     }
     return <LogInPage />
 }

@@ -25,6 +25,7 @@ const GroceryListCard = (props: GroceryListProps) => {
                 {items.slice(0, 4).map((item) => (
                     <li>{item}</li>
                 ))}
+                {items.length > 4 ? <li>...</li> : <></>}
             </ul>
             <button className="EditListButton" onClick={editList}>
                 <img src={add} alt="add recipe to your list" />

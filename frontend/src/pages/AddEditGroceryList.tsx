@@ -13,6 +13,14 @@ const AddEditGroceryList = () => {
 
     useEffect(() => {
         if (adding) {
+            if (global.new_items) {
+                let listItems = global.new_items.map((item: any, index: number) => `item${index + 1}`);
+                setItems(listItems);
+                
+                for (let i = 0; i < listItems.length; i++) {
+                    setValue(listItems[i], global.new_items[i]);
+                }
+            }
             return;
         }
 
@@ -30,7 +38,7 @@ const AddEditGroceryList = () => {
             .catch((err) => {
                 console.error(err);
             });
-    }, [adding]);
+    }, [adding, global.server, global.id]);
 
     const addItem = () => {
         setItems([...items, "item" + (items.length + 1).toString()]);

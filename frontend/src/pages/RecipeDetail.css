@@ -19,8 +19,10 @@
 
 .RecipeDetailImg {
 
-    border-radius: 4px;
-    max-width: 100%;
+    border-radius: 1rem;
+    width: 26rem;
+    height: 26rem;
+    object-fit: cover;
 }
 
 .RecipeDetailTableContainer {
@@ -65,4 +67,9 @@ td {
 .DetailTags {
     font-weight: 200;
     color: #576B75;
+}
+
+.RecipeDescription {
+    color: gray;
+    padding: 2rem 8rem;
 }

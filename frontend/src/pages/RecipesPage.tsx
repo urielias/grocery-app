@@ -18,7 +18,7 @@ const RecipesPage = () => {
             .catch((err) => {
                 console.error(err);
             });
-    }, [global.userID]);
+    }, [global.server, global.userID]);
 
     let seenCategories = new Set<string>();
 
@@ -31,7 +31,7 @@ const RecipesPage = () => {
     return (
         <div className="RecipesPageMain">
             {categories.map((category) => {
-                let filtered = recipes.filter((recipe) => recipe.category == category);
+                let filtered = recipes.filter((recipe) => recipe.category === category);
                 return (
                     <div>
                         <h1>{category}</h1>
